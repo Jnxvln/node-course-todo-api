@@ -19,7 +19,7 @@ const todos = [
 
 // Clear the database before each test
 beforeEach((done) => {
-  Todo.remove({}).then(() => {
+  Todo.deleteMany({}).then(() => {
     return Todo.insertMany(todos);
   }).then(() => done());
 })
